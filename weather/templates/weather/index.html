@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>What's the Weather!!!!</title>
+    </head>
+
+    <body>
+        
+        <h1>What's the Weather!!!!</h1>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+                <label for="city" class="form-label">City</label>
+                <input type="text" name="city" class="form-control" placeholder="Search">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+    
+        <div class="row">
+            {% if city and temperature and description and humidity %}
+            <div class="col-md-6 col-md-offset-3">
+                <h3>City: {{ city }}</h3>
+                <h3>Temperature: {{ temperature }}</h3>
+                <h3>Description: {{ description }}</h3>
+                <h3>Humidity: {{ humidity }}</h3>
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>

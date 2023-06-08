@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://appsemble.app/api.json#/components/schemas/AppDefinition": "file:///home/biswajitlinux/django-project/weatherapp/deployment.yaml"
+    }
+}
