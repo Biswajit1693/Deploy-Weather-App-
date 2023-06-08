@@ -34,7 +34,7 @@ pipeline {
                 
                 //deployment
                 
-                sh 'kubectl apply -f deployment.yaml --force'
+                sh 'kubectl apply -f Deployment.yaml --force'
                            
                 }
             }
