@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: weatherapp
+  name: myweatherapp
 spec:
   replicas: 1
   selector:
@@ -13,8 +13,8 @@ spec:
         app: myweatherapp
     spec:
       containers:
-        - name: weather-app
-          image: jeetlinux/docker-demo:weather
+        - name: myweatherapp
+          image: jeetlinux/docker-demo:appweather
 
           ports:
             - containerPort: 8000
@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: weatherapp
+  name: myweatherapp
 spec:
   selector:
     app: myweatherapp

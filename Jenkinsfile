@@ -7,8 +7,8 @@ pipeline {
                 // Source repo url
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GitHub', url: 'https://github.com/Biswajit1693/CI-CD-deployment']])
                 // Build docker image
-                sh 'sudo docker build -t myweather:latest .'
-                sh 'sudo docker run -d -p 8000:8000 myweather:latest'
+                sh 'sudo docker build -t appweather:latest .'
+                
             }
         }
         
@@ -21,8 +21,8 @@ pipeline {
                 }
                 
                 // push the image to dockerhub
-                sh 'sudo docker tag myweather:latest jeetlinux/docker-demo:myweather'
-                sh 'sudo docker push jeetlinux/docker-demo:myweather'
+                sh 'sudo docker tag appweather:latest jeetlinux/docker-demo:appweather'
+                sh 'sudo docker push jeetlinux/docker-demo:appweather'
                 
             }
         }
