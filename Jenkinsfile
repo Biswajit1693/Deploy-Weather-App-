@@ -5,7 +5,7 @@ pipeline {
         stage("Checkout from repo and build docker image") {
             steps {
                 // Source repo url
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GitHub', url: 'https://github.com/Biswajit1693/CI-CD-deployment']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GitHub', url: 'https://github.com/Biswajit1693/DeployWeatherApp']])
                 // Build docker image
                 sh 'sudo docker build -t appweather:latest .'
                 
